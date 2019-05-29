@@ -17,6 +17,9 @@ function goodbye(name) {
 
 console.log(goodbye('Devon'));
 
+
+
+
 // code example for Window Binding
 
 
@@ -51,9 +54,9 @@ const nyYankees = new bestTeam('New York Yankees');
 const chWhitesox = new bestTeam('Chicago White Sox');
 const kcRoyals = new bestTeam('Kansas City Royals');
 
-// nyYankees.sentence();
-// chWhitesox.sentence();
-// kcRoyals.sentence();
+nyYankees.sentence();
+chWhitesox.sentence();
+kcRoyals.sentence();
 
 
 
