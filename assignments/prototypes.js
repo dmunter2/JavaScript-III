@@ -34,10 +34,11 @@ GameObject.prototype.destroy = function() {
   * should inherit destroy() from GameObject's prototype
 */
 const CharacterStats = function(attr) {
+    GameObject.call(this, attr)
     this.healthPoints = attr.healthPoints;
 };
 
-CharacterStats.prototype = Object.create(GameObject.prototype);
+CharacterStats.prototype = GameObject.prototype;
 
 CharacterStats.prototype.takeDamage = function(attr) {
     return `${this.name} took damage`;
@@ -55,12 +56,13 @@ CharacterStats.prototype.takeDamage = function(attr) {
   * should inherit takeDamage() from CharacterStats
 */
 const Humanoid = function(attr) {
+    CharacterStats.call(this, attr)
     this.team = attr.team;
     this.weapons = attr.weapons;
     this.language = attr.language;
 };
 
-Humanoid.prototype = Object.create(CharacterStats.prototype);
+Humanoid.prototype = CharacterStats.prototype;
 
 Humanoid.prototype.greet = function(attr) {
     return `${this.name} offers a greeting in ${this.language}`;
